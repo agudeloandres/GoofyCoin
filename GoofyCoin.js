@@ -77,8 +77,8 @@ GoofyCoin.addBlock(new Block(3, "20/07/2017", { "from":"Carol","to":"Diana",amou
 
 console.log('Is Blockchain valid? ' + GoofyCoin.isChainValid());
 
-console.log('Tampering a block...');
-GoofyCoin.chain[1].data = { amount: 100 };
+console.log('Tampering the second block... Changing the transferred amount to 100 ...');
+GoofyCoin.chain[1].data = { "from":"Bob","to":"Carol",amount: 1000 };
 GoofyCoin.chain[1].hash = GoofyCoin.chain[1].calculateHash();
 
 console.log("Is Blockchain valid now? " + GoofyCoin.isChainValid());
