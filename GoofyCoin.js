@@ -32,7 +32,7 @@ class Blockchain{
     }
 
     createGenesisBlock() {
-        return new Block(0, "01/01/2017", "Genesis block", "0");
+        return new Block(0, "01/01/2018", "Genesis block", "0");
     }
 
     getLatestBlock() {
@@ -67,17 +67,17 @@ class Blockchain{
 
 let GoofyCoin = new Blockchain();
 console.log('Mining block 1...');
-GoofyCoin.addBlock(new Block(1, "20/07/2017", { "from":"Alice","to":"Bob",amount: 4 }));
+GoofyCoin.addBlock(new Block(1, "15/10/2018", { "from":"Alice","to":"Bob",amount: 4 }));
 
 console.log('Mining block 2...');
-GoofyCoin.addBlock(new Block(2, "20/07/2017", { "from":"Bob","to":"Carol",amount: 8 }));
+GoofyCoin.addBlock(new Block(2, "15/10/2018", { "from":"Bob","to":"Carol",amount: 8 }));
 
 console.log('Mining block 3...');
-GoofyCoin.addBlock(new Block(3, "20/07/2017", { "from":"Carol","to":"Diana",amount: 20 }));
+GoofyCoin.addBlock(new Block(3, "15/10/2018", { "from":"Carol","to":"Diana",amount: 20 }));
 
 console.log('Is Blockchain valid? ' + GoofyCoin.isChainValid());
 
-console.log('Tampering the second block... Changing the transferred amount to 100 ...');
+console.log('Tampering with the second block... Changing the transferred amount to 100 ...');
 GoofyCoin.chain[1].data = { "from":"Bob","to":"Carol",amount: 1000 };
 GoofyCoin.chain[1].hash = GoofyCoin.chain[1].calculateHash();
 
